@@ -29,6 +29,11 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+	<style>
+		body {
+			overflow-y: scroll;
+		}
+	</style>
 </head>
 
 <body>
@@ -707,8 +712,6 @@
 			</div>
 		</div>
 	</section> -->
-
-
 	<section class="ftco-section ftco-appointment" id="contact">
 		<div class="overlay"></div>
 		<div class="container">
@@ -875,7 +878,9 @@
 					center: true,
 					margin: 0,
 					responsiveClass: true,
-					nav: false,
+					nav: true,
+					touchDrag: true,
+					mouseDrag: true,
 					responsive: {
 						0: {
 							items: 1,
@@ -894,11 +899,10 @@
 				});
 			};
 
-			(function ($) {
+			$(document).ready(function () {
 				carousels();
-			})(jQuery);
+			});
 		})();
-
 	</script>
 	<script>
 		(function () {
@@ -957,7 +961,7 @@
 				email: document.getElementById("email").value,
 				date: document.getElementById("date").value,
 				mobile: document.getElementById("mobile").value,
-				messages: document.getElementById("message").value
+				message: document.getElementById("message").value
 			};
 
 			const serviceID = "service_f22gr15";
